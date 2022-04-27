@@ -1,3 +1,56 @@
+<h1> Examen Zapateria recuperacion 2Trim.</h1>
+
+   **Escribir en Laravel framework una tienda online de zapatos.**
+
+<h2>El usuario podrá consultar el catálogo de zapatos que hay en la tienda. Si hay alguno que le interese,
+puede añadirlo a su carrito. En todo momento, podrá consultar su carrito a través de una opción en el
+menú principal de la aplicación (en la barra superior). También podrá eliminar artículos del carrito
+o vaciarlo completamente. Si finalmente decide comprar lo que tiene en el carrito, podrá hacerlo
+pulsando un botón.</h2>
+
+- **Se pide:**
+
+**1.-** **(1,5 puntos) Crear la base de datos mediante migraciones con las siguientes tablas, incluyendo
+los modelos correspondientes y todas las relaciones adecuadas entre ellos:**
+
+    a) zapatos (id, codigo, denominacion, precio)
+    -El código es el código de barras (13 dígitos) y debe ser único.
+    -El precio está en Euros.
+
+    b) carritos (id, user_id, zapato_id, cantidad)
+    -Cada usuario tiene su propio carrito de la compra.
+
+    c) facturas (id, user_id)
+
+    d) lineas (id, factura_id, zapato_id, cantidad)
+
+
+**2.-** **(1 punto) Si el usuario está logueado, en el menú principal debe aparecer una opción «Ver carrito
+(n)» siendo n la cantidad total de artículos que hay en el carrito del usuario (NO la cantidad de
+artículos distintos que tiene, sino la cantidad total de unidades que hay en el carrito). Al pulsar
+esa opción, se deberá ir a la ruta GET /carritos.**
+
+
+**3.-** **((1 punto) Todas las acciones de las rutas que empiecen por /carritos deben ser accesibles
+únicamente si el usuario está logueado. En caso contrario, se requerirá al usuario que se loguee
+previamente.**
+
+
+**4.-** **(2,5 puntos) En la ruta GET /zapatos deberá aparecer la lista de zapatos que hay en la tienda.
+Al lado de cada zapato debe aparecer un botón «Añadir al carrito» que, si se pulsa, añadirá ese
+zapato al carrito del usuario a través de la ruta POST /carritos/meter/{zapato} y volverá de
+nuevo a /zapatos. Si ese zapato ya estaba en el carrito, se incrementará en uno su cantidad en el
+carrito.**
+
+
+**5.-** **(2,5 puntos) En la ruta GET /carritos, mostrar el contenido del carrito del usuario. En cada línea
+de detalle del carrito, se debe indicar el zapato, el precio, la cantidad y el importe (cantidad ×
+precio) de esa línea. Al lado aparecerán dos botones «+» y «-» para incrementar y decrementar la
+cantidad de esa línea (si es mediante AJAX, mejor). Si la cantidad de la línea queda a 0, deberá**
+
+
+
+-------------------------------------------------------------------------
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
