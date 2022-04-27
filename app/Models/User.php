@@ -41,4 +41,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    //1 usuario tiene muchas lineas de carrito
+    public function carritos()
+    {
+        $this->hasMany(Carrito::class);
+    }
+
+    //1 usuario tiene muchas facturas
+    public function facturas()
+    {
+        $this->hasMany(Factura::class);
+    }
 }
