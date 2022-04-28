@@ -20,19 +20,19 @@
                 <br>
 
 
-               {{--  <a href="{{ route('zapatoes.show', $zapato, true) }}"
+                 {{-- <a href="{{ route('zapatoes.show', $zapato, true) }}"
                     class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Mostrar</a>
 
                 <a href="{{ route('zapatoes.edit', $zapato, true) }}"
                     class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Editar</a>
-
-                <form action="{{ route('zapatoes.destroy', $zapato) }}" method="POST">
+ --}}
+                <form action="{{ route('carrito.agregarCarrito', $zapato) }}" method="POST">
                     @csrf
-                    @method('DELETE')
+                    @method('POST')
                     <br>
-                    <button onclick="return confirm('¿Seguro que desea borrar el zapato?')"
-                        class="px-4 py-1 text-sm text-white bg-red-400 rounded" type="submit">Borrar</button>
-                </form> --}}
+                    <button {{-- onclick="return confirm('¿Seguro que desea borrar el zapato?')" --}}
+                        class="px-4 py-1 text-sm text-white bg-blue-400 rounded" type="submit">Añadir</button>
+                </form> 
 
             </div>
         </div>

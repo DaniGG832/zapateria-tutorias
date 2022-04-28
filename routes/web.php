@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\ZapatoController;
+use App\Models\Zapato;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('zapateria');
 });
+
+Route::get('/zapateria', function () {
+    return view('zapateria',[
+        'zapatos'=>Zapato::all(),
+        
+    ]);
+})->name('zapateria');
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,5 +42,7 @@ Route::post('/carrito',[CarritoController::class,'Comprar'])->middleware(['auth'
 Route::get('/carrito/vaciar',[CarritoController::class,'VaciarCarrito'])->middleware(['auth'])->name('carrito.vaciar');
 
 Route::get('/carrito/comprar',[CarritoController::class,'comprar'])->middleware(['auth'])->name('carrito.comprar');
+
+Route::post('/carrito/{zapato}',[CarritoController::class,'agregarCarrito'])->middleware(['auth'])->name('carrito.agregarCarrito');
 
 Route::resource('carritos',CarritoController::class);

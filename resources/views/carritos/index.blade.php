@@ -11,6 +11,14 @@
 
                     {{-- {{$carritos[0]->zapatos->precio}} --}}
                     <div class="bg-blue-200">
+                        {{-- {{$carritos->isEmpty()}} --}}
+                        @if ($carritos->isEmpty())
+                        <p class="text-2xl">  No hay articulos en el Carrito</p>
+                        
+                            
+                        @else
+                            
+                        
                         <table class="table-auto border-separate border border-blue-900">
                             <thead>
                                 <tr>
@@ -34,8 +42,9 @@
                                             {{ $linea->zapato->precio * $linea->cantidad . ' €' }}</td>
 
                                     </tr>
-                                @empty
-                                    <p>No hay articulos en el Carrito</p>
+                               
+                                    @empty
+                                    <p class="text-2xl">  No hay articulos en el Carrito</p>
                                 @endforelse
                                 <tr>
                                     <td></td>
@@ -63,7 +72,7 @@
                                     <td></td>
 
                                     <th>
-                                    <a href="{{route('carrito.comprar')}}">
+                                    <a href="{{route('carrito.comprar'),}}">
                                             <button
                                                 class="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                                                 Comprar
@@ -71,8 +80,10 @@
                                         </a>
                                     </th>
                                 </tr>
+                                
                             </tbody>
                         </table>
+                        @endif
                     </div>
                 </div>
             </div>

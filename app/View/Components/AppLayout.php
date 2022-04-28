@@ -19,6 +19,7 @@ class AppLayout extends Component
     
         //dd(Carrito::where('user_id',auth()->user()->id)->sum('cantidad'));
         $cantidad = Carrito::where('user_id',auth()->user()->id)->sum('cantidad');
+        
         return view('layouts.app',['cantidad'=>$cantidad]);
     }
 }
