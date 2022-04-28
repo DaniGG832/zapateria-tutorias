@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\ZapatoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+/* Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard'); */
+
+Route::get('/dashboard',[ZapatoController::class,'index'])->middleware(['auth'])->name('dashboard');
+
+Route::get('/carrito',[CarritoController::class,'index'])->middleware(['auth'])->name('carrito-index');
 
 require __DIR__.'/auth.php';
 

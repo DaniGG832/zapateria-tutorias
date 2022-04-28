@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCarritoRequest;
 use App\Http\Requests\UpdateCarritoRequest;
 use App\Models\Carrito;
+use App\Models\User;
 
 class CarritoController extends Controller
 {
@@ -15,7 +16,11 @@ class CarritoController extends Controller
      */
     public function index()
     {
-        //
+        $carritos = Carrito::where('user_id',auth()->user()->id)->get();
+
+        //dd($carritos);
+
+        return view('carrito',['carritos'=>$carritos]);
     }
 
     /**
