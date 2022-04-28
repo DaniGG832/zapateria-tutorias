@@ -8,13 +8,13 @@
 
             <div class="p-3">
 
-
+                <span> </span>
                 <h2 class="font-semibold text-xl leading-6 text-blue-700 my-2">
-                    <span class="text-sm text-primary text-gray-700">{{$zapato->codigo}}</span><br>
-                    {{ $zapato->denominacion }}
+                    <span class="text-sm text-primary text-gray-700">Codigo: {{$zapato->codigo}}<br>Denominación: </span>
+                     {{$zapato->denominacion }}
                 </h2>
                 <p class="paragraph-normal text-blue-400">
-                   {{ $zapato->precio.' €'}}
+                   {{'Precio: '. $zapato->precio.' €'}}
                 </p>
                 
                 <br>

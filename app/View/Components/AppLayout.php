@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Carrito;
 use Illuminate\View\Component;
 
 class AppLayout extends Component
@@ -13,6 +14,11 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+
+        //dd(Carrito::where('user_id',auth()->user()->id)->get());
+    
+        //dd(Carrito::where('user_id',auth()->user()->id)->sum('cantidad'));
+        $cantidad = Carrito::where('user_id',auth()->user()->id)->sum('cantidad');
+        return view('layouts.app',['cantidad'=>$cantidad]);
     }
 }
