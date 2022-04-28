@@ -25,7 +25,14 @@ Route::get('/', function () {
 
 Route::get('/dashboard',[ZapatoController::class,'index'])->middleware(['auth'])->name('dashboard');
 
-Route::get('/carrito',[CarritoController::class,'index'])->middleware(['auth'])->name('carrito-index');
+Route::get('/carrito',[CarritoController::class,'index'])->middleware(['auth'])->name('carrito.index');
 
 require __DIR__.'/auth.php';
 
+Route::post('/carrito',[CarritoController::class,'Comprar'])->middleware(['auth'])->name('carrito.comprar');
+
+Route::get('/carrito/vaciar',[CarritoController::class,'VaciarCarrito'])->middleware(['auth'])->name('carrito.vaciar');
+
+Route::get('/carrito/comprar',[CarritoController::class,'comprar'])->middleware(['auth'])->name('carrito.comprar');
+
+Route::resource('carritos',CarritoController::class);

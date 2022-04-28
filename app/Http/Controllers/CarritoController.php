@@ -17,11 +17,38 @@ class CarritoController extends Controller
     public function index()
     {
         $carritos = Carrito::where('user_id',auth()->user()->id)->get();
+        //$Totalarticulos = Carrito::where('user_id',auth()->user()->id)->sum('cantidad');
+        
+        $sumalinea=0;
 
-        //dd($carritos);
+        foreach ($carritos as $key => $linea) {
+            # code...
+            $sumalinea+=$linea->zapato->precio * $linea->cantidad;
+        }
+//dd($sumalinea);
 
-        return view('carrito',['carritos'=>$carritos]);
+        return view('carritos/index',['carritos'=>$carritos,
+                                'totalCarrito'=> $sumalinea]);
     }
+
+
+    public function VaciarCarrito()
+    {
+        $carritos = Carrito::where('user_id',auth()->user()->id)->get();
+
+           // dd($carritos);
+        $carritos->each->delete();
+
+        return redirect()->route('dashboard')->with('success', 'El carrito esta vacio.');
+    }
+
+    public function Comprar()
+    {
+
+
+        return 'comprar';
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -88,4 +115,8 @@ class CarritoController extends Controller
     {
         //
     }
+
+    
+
+    
 }
