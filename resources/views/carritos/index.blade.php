@@ -30,18 +30,36 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($carritos as $key =>$linea)
+                                @forelse ($carritos as $key =>$carrito)
                                     <tr class="m-96">
                                         <td class="text-center border border-blue-600">{{ 'linea ' . $key + 1 }}</td>
                                         <td class="w-80 text-center border border-blue-600">
-                                            {{ $linea->zapato->denominacion }}</td>
-                                        <td class="text-right border border-blue-600">{{ $linea->cantidad }}</td>
+                                            {{ $carrito->zapato->denominacion }}</td>
+                                        <td class="text-right border border-blue-600">{{ $carrito->cantidad }}</td>
                                         <td class="text-right border border-blue-600">
-                                            {{ $linea->zapato->precio . ' €' }}</td>
+                                            {{ $carrito->zapato->precio . ' €' }}</td>
                                         <td class="text-right border border-blue-600">
-                                            {{ $linea->zapato->precio * $linea->cantidad . ' €' }}</td>
+                                            {{ $carrito->zapato->precio * $carrito->cantidad . ' €' }}</td>
 
+                                            <td>
+                                                <a href="{{ route('carrito.disminuir', $carrito) }}">
+                                
+                                                <button class="min-w-auto w-10 h-10 bg-red-300 p-2 rounded-full hover:bg-red-500 text-white ">
+                                                    -
+                                                  </button>
+                                                  </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('carrito.aumentar', $carrito) }}">
+                                                
+                                                    <button class="min-w-auto w-10 h-10 bg-green-400 p-2 rounded-full hover:bg-green-600 text-white font-semibold ">
+                                                        +
+                                                      </button>
+                                                </a>
+                                            </td>
                                     </tr>
+                                    
+                                    
                                
                                     @empty
                                     <p class="text-2xl">  No hay articulos en el Carrito</p>

@@ -22,7 +22,7 @@ class CarritoController extends Controller
      */
     public function index()
     {
-        $carritos = Carrito::where('user_id', auth()->user()->id)->get();
+        $carritos = Carrito::where('user_id', auth()->user()->id)->orderBy('id')->get();
         //$Totalarticulos = Carrito::where('user_id',auth()->user()->id)->sum('cantidad');
 
         $sumalinea = 0;
@@ -118,6 +118,41 @@ class CarritoController extends Controller
 
         
     }
+
+
+    public function aumentar(Carrito $carrito)
+    {
+        
+        //dd($carrito->zapato->denominacion);
+        $carrito->cantidad++;
+      
+        $carrito->save();
+
+        return redirect()->route('carrito.index')->with('success', 'producto ( '.$carrito->zapato->denominacion.' ) aumentado');
+    }
+
+
+    public function disminuir(Carrito $carrito)
+    {
+
+        $carrito->cantidad--;
+        
+        if ($carrito->cantidad) {
+            // dd($carrito->cantidad);
+            
+            $carrito->save();
+            
+            return redirect()->route('carrito.index')->with('success', 'producto ( '.$carrito->zapato->denominacion.' ) disminuido');
+        }else{
+
+            $carrito->delete();
+            return redirect()->route('carrito.index')->with('success', 'producto ( '.$carrito->zapato->denominacion.' ) se ha eliminado del carrito');
+        }
+       
+   
+    }
+
+
 
 
     public function create()
