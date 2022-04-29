@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFacturaRequest;
 use App\Http\Requests\UpdateFacturaRequest;
 use App\Models\Factura;
+use Illuminate\Support\Facades\Auth;
 
 class FacturaController extends Controller
 {
@@ -15,7 +16,20 @@ class FacturaController extends Controller
      */
     public function index()
     {
-        //
+
+       ///dd(Auth()->user()->id);
+        $facturas = Factura::where('user_id', auth()->user()->id)->orderBy('created_at')->get();
+
+        
+        return view('facturas.index',[
+            'facturas'=>$facturas,
+        ]);
+    }
+
+
+    public function detalles(factura $factura)
+    {
+        return $factura->lineas;
     }
 
     /**

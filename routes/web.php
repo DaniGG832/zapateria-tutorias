@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\ZapatoController;
 use App\Models\Zapato;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,12 @@ Route::post('/carrito/meter/{zapato}',[CarritoController::class,'agregarCarrito'
 Route::get('/carrito/aumentar/{carrito}',[CarritoController::class,'aumentar'])->middleware(['auth'])->name('carrito.aumentar');
 
 Route::get('/carrito/disminuir/{carrito}',[CarritoController::class,'disminuir'])->middleware(['auth'])->name('carrito.disminuir');
+
+Route::get('/facturas',[FacturaController::class,'index'])->middleware(['auth'])->name('facturas.index');
+
+Route::get('/facturas/detalles/{factura}',[FacturaController::class,'detalles'])->middleware(['auth'])->name('facturas.detalles');
+
+
 
 
 Route::resource('carritos',CarritoController::class);
