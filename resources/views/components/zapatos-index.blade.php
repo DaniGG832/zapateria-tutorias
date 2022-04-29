@@ -39,3 +39,5 @@
     @endforeach
 
 </div>
+
+{{ $zapatos->links() }}

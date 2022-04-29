@@ -15,7 +15,7 @@ class ZapatoController extends Controller
      */
     public function index()
     {
-        $zapatos = Zapato::all();
+        $zapatos = Zapato::paginate();
 
         return view('dashboard',  ['zapatos' => $zapatos]);
     }
