@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- {{$facturas[0]->zapatos->precio}} --}}
-                    <div class="bg-blue-200">
+                    <div class="">
                         {{-- {{$facturas->isEmpty()}} --}}
                         @if ($facturas->isEmpty())
                             <p class="text-2xl"> No hay facturas</p>
@@ -18,11 +18,11 @@
                             <table class="table-auto border-separate border border-blue-100">
                                 <thead>
                                     <tr>
-                                        <th class="border border-blue-600">facturas</th>
-                                        <th class="border border-blue-600">numero factura</th>
-                                        <th class="border border-blue-600">fecha</th>
-                                        <th class="border border-blue-600">Articulos</th>
-                                        <th class="border border-blue-600">Detalles</th>
+                                        <th class="border border-blue-400">facturas</th>
+                                        <th class="border border-blue-400">numero factura</th>
+                                        <th class="border border-blue-400">fecha</th>
+                                        <th class="border border-blue-400">Articulos</th>
+                                        <th class="border border-blue-400">Detalles</th>
 
                                     </tr>
                                 </thead>
@@ -30,15 +30,22 @@
                                     @forelse ($facturas as $key =>$factura)
                                         {{ $factura->lineas }}
                                         <tr class="m-96">
-                                            <td class="text-center border border-blue-600">{{ $key + 1 }}</td>
-                                            <td class="w-80 text-center border border-blue-600">
+                                            <td class="text-center border border-blue-200">{{ $key + 1 }}</td>
+                                            <td class="w-80 text-center border border-blue-200">
                                                 {{ $factura->id }}</td>
-                                            <td class="text-right border border-blue-600">
+                                            <td class="text-right border border-blue-200">
                                                 {{ $factura->created_at }}</td>
-                                            <td class="text-right border border-blue-600">
+                                            <td class="text-right border border-blue-200">
                                                 {{ $factura->lineas->sum('cantidad') }}</td>
-                                            <td class="text-right border border-blue-600">
-                                                {{ $factura->linea }}</td>
+                                            <td class="text-right border border-blue-200">
+                                              <a href="{{route('facturas.detalles',$factura)}}">
+                                                <button
+                                                    class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                                    mostrar
+                                                </button>
+                                            </a>
+                                              
+                                            </td>
 
 
                                         </tr>
