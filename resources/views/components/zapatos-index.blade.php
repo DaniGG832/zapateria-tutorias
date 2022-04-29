@@ -39,5 +39,4 @@
     @endforeach
 
 </div>
-
 {{ $zapatos->links() }}

@@ -79,7 +79,7 @@ class CarritoController extends Controller
 
             $carrito->each->delete();
 
-            return redirect()->route('zapateria')->with('success', 'Pedido realizado.');
+            return redirect()->route('dashboard')->with('success', 'Pedido realizado.');
         } else {
             return redirect()->route('carrito.index')->with('error', 'el carrito esta vacio.');
         }
