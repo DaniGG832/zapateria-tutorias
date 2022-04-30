@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/zapateria', function () {
     return view('zapateria',[
-        'zapatos'=>Zapato::all(),
+        'zapatos'=>Zapato::paginate(9),
         
     ]);
 })->name('zapateria');

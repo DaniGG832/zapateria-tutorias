@@ -39,4 +39,4 @@
     @endforeach
 
 </div>
-{{ $zapatos->links() }}
+ {{ $zapatos->links() }} 
