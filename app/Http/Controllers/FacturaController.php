@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFacturaRequest;
 use App\Http\Requests\UpdateFacturaRequest;
 use App\Models\Factura;
+use App\Models\Linea;
 use Illuminate\Support\Facades\Auth;
 
 class FacturaController extends Controller
@@ -29,7 +30,11 @@ class FacturaController extends Controller
 
     public function detalles(factura $factura)
     {
-        return $factura->lineas;
+
+        return view('facturas.detalles',[
+            'lineas' => $factura->lineas,
+        ]);
+        //return $factura->lineas;
     }
 
     /**

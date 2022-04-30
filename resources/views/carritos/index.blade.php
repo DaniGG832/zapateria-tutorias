@@ -90,7 +90,9 @@
                                     <td></td>
 
                                     <th>
-                                    <a href="{{route('carrito.comprar'),}}">
+                                    <a 
+                                    onclick="return confirm('¿desea realizar la compra?')"
+                                    href="{{route('carrito.comprar'),}}">
                                             <button
                                                 class="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                                                 Comprar

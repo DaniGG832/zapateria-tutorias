@@ -28,7 +28,7 @@
                                 </thead>
                                 <tbody>
                                     @forelse ($facturas as $key =>$factura)
-                                        {{ $factura->lineas }}
+                                        {{-- {{ $factura->lineas }} --}}
                                         <tr class="m-96">
                                             <td class="text-center border border-blue-200">{{ $key + 1 }}</td>
                                             <td class="w-80 text-center border border-blue-200">

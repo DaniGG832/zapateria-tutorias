@@ -12,9 +12,7 @@
                     {{-- {{$facturas[0]->zapatos->precio}} --}}
                     <div class="bg-blue-200">
                         {{-- {{$facturas->isEmpty()}} --}}
-                        @if ($facturas->isEmpty())
-                            <p class="text-2xl"> No hay facturas</p>
-                        @else
+                       
                             <table class="table-auto border-separate border border-blue-100">
                                 <thead>
                                     <tr>
@@ -27,6 +25,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{$lineas[0]->zapato->denominacion}}
+
+                                    {{--  
                                     @forelse ($facturas as $key =>$factura)
                                         {{ $factura->lineas }}
                                         <tr class="m-96">
@@ -58,7 +59,7 @@
                             </table>
                         @endif
                     </div>
-
+                    --}}
 
                 </div>
             </div>

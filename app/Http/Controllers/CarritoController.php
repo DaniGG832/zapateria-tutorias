@@ -59,6 +59,8 @@ class CarritoController extends Controller
 
     public function Comprar()
     {
+
+        
         $carrito = Carrito::where('user_id', auth()->user()->id)->get();
 
 
