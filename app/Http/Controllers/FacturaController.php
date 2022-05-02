@@ -30,9 +30,17 @@ class FacturaController extends Controller
 
     public function detalles(factura $factura)
     {
+         $total=0;
 
+        foreach ($factura->lineas as $key => $linea) {
+         $total +=$linea->cantidad* $linea->zapato->precio;
+            
+        }
+
+       
         return view('facturas.detalles',[
-            'lineas' => $factura->lineas,
+            'factura' => $factura,
+            'total'=>$total,
         ]);
         //return $factura->lineas;
     }
