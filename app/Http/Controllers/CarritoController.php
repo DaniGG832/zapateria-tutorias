@@ -118,7 +118,11 @@ class CarritoController extends Controller
         $carrito->save();
 
         //dd($page);
-        return redirect("dashboard?page=$page")->with('success', 'Producto añadido con exito.');
+
+        //dd(route('dashboard', [ 'page' => $page]));
+        //return redirect("dashboard?page=$page")->with('success', 'Producto añadido con exito.');
+        
+        return redirect()->route('dashboard', [ 'page' => $page])->with('success', 'Producto añadido con exito.');
 
 
         
