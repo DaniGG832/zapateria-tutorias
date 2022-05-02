@@ -32,6 +32,10 @@ Route::get('/zapateria', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard'); */
 
+
+
+//Route::group()
+
 Route::get('/dashboard',[ZapatoController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/carrito',[CarritoController::class,'index'])->middleware(['auth'])->name('carrito.index');
@@ -57,4 +61,4 @@ Route::get('/facturas/detalles/{factura}',[FacturaController::class,'detalles'])
 
 
 
-Route::resource('carritos',CarritoController::class);
+//Route::resource('carritos',CarritoController::class);
