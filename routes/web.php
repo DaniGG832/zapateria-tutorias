@@ -48,7 +48,7 @@ Route::get('/carrito/vaciar',[CarritoController::class,'VaciarCarrito'])->middle
 
 Route::get('/carrito/comprar',[CarritoController::class,'comprar'])->middleware(['auth'])->name('carrito.comprar');
 
-Route::post('/carrito/meter/{zapato}',[CarritoController::class,'agregarCarrito'])->middleware(['auth'])->name('carrito.agregarCarrito');
+Route::post('/carrito/meter/{zapato}/{page?}',[CarritoController::class,'agregarCarrito'])->middleware(['auth'])->name('carrito.agregarCarrito');
 
 Route::get('/carrito/aumentar/{carrito}',[CarritoController::class,'aumentar'])->middleware(['auth'])->name('carrito.aumentar');
 

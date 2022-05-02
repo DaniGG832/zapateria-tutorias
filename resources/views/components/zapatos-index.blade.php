@@ -26,7 +26,7 @@
                 <a href="{{ route('zapatoes.edit', $zapato, true) }}"
                     class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Editar</a>
  --}}
-                <form action="{{ route('carrito.agregarCarrito', $zapato) }}" method="POST">
+                <form action="{{ route('carrito.agregarCarrito',[ $zapato,$page]) }}" method="POST">
                     @csrf
                     @method('POST')
                     <br>
@@ -40,3 +40,6 @@
 
 </div>
  {{ $zapatos->links() }} 
+
+{{-- {{Request::fullUrl();}} --}}
+

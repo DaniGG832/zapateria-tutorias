@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreZapatoRequest;
 use App\Http\Requests\UpdateZapatoRequest;
 use App\Models\Zapato;
+use Illuminate\Http\Request;
 
 class ZapatoController extends Controller
 {
@@ -13,11 +14,13 @@ class ZapatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $zapatos = Zapato::paginate(9);
 
-        return view('dashboard',  ['zapatos' => $zapatos]);
+       //dd($request->page);
+
+        return view('dashboard',  ['zapatos' => $zapatos, 'page'=>$request->page]);
     }
 
     /**

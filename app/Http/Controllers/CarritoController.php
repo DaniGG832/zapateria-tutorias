@@ -25,6 +25,7 @@ class CarritoController extends Controller
         $carritos = Carrito::where('user_id', auth()->user()->id)->orderBy('id')->get();
         //$Totalarticulos = Carrito::where('user_id',auth()->user()->id)->sum('cantidad');
 
+        
         $sumalinea = 0;
 
         foreach ($carritos as $key => $linea) {
@@ -94,10 +95,11 @@ class CarritoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function agregarCarrito(Zapato $zapato)
+    public function agregarCarrito(Zapato $zapato,$page=null)
     {
         //$carrito = Carrito::where('zapato_id', $zapato->id)->first();
-        
+         
+       
         $carrito = Carrito::where('zapato_id', $zapato->id)->where('user_id', auth()->user()->id)->first();
 
         //dd(Auth::user()->id.'-'.$carrito.$zapato);
@@ -115,7 +117,8 @@ class CarritoController extends Controller
 
         $carrito->save();
 
-        return redirect()->route('dashboard')->with('success', 'Producto añadido con exito.');
+        //dd($page);
+        return redirect("dashboard?page=$page")->with('success', 'Producto añadido con exito.');
 
 
         
