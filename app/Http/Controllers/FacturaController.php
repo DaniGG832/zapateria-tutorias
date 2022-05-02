@@ -37,10 +37,12 @@ class FacturaController extends Controller
             
         }
 
+        $iva=round($total*0.21,2);
        
         return view('facturas.detalles',[
             'factura' => $factura,
             'total'=>$total,
+            'iva'=>$iva,
         ]);
         //return $factura->lineas;
     }

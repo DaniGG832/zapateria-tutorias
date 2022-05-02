@@ -36,7 +36,7 @@
 
                                   
                                     @foreach ($factura->lineas as $key =>$linea)
-
+                                            
                                     <tr class="m-96">
                                         <td class="text-center border border-blue-300">
                                             {{ $linea->zapato->denominacion}}</td>
@@ -64,8 +64,16 @@
                                     <tr class="m-96 ">
                                         <td ></td>
                                         <td ></td>
-                                        <td class="text-center font-semibold border-2 border-blue-800">Total</td>
-                                        <td class="text-center font-bold border-2 border-blue-800 w-44">{{$total.' €'}}</td>
+                                        <td class="text-center font-semibold border-2 border-blue-400">IVA<span class="text-sm text-gray-500" > 21%</span></td>
+                                        <td class="text-center text-lg font-semibold border-2 border-blue-600 w-44">{{$iva.' €'}}</td>
+                                
+                                    </tr>
+
+                                    <tr class="m-96 ">
+                                        <td ></td>
+                                        <td ></td>
+                                        <td class="text-center text-xl font-semibold border-2 border-blue-800">Total</td>
+                                        <td class="text-center text-xl font-bold border-2 border-blue-800 w-44">{{$total.' €'}}</td>
                                 
                                     </tr>
 
