@@ -22,10 +22,10 @@
                             <table class="table-auto border-separate border border-blue-100 mt-4">
                                 <thead>
                                     <tr>
-                                        <th class="border border-blue-400">denominacion</th>
-                                        <th class="border border-blue-400">precio</th>
-                                        <th class="border border-blue-400">cantidad</th>
-                                        <th class="border border-blue-400">total</th>
+                                        <th class="border bg-blue-200 border-blue-400">denominacion</th>
+                                        <th class="border bg-blue-200 border-blue-400">precio</th>
+                                        <th class="border bg-blue-200 border-blue-400">cantidad</th>
+                                        <th class="border bg-blue-200 border-blue-400">total</th>
                                         {{-- <th class="border border-blue-600">Detalles</th> --}}
 
                                     </tr>
@@ -72,8 +72,8 @@
                                     <tr class="m-96 ">
                                         <td ></td>
                                         <td ></td>
-                                        <td class="text-center text-xl font-semibold border-2 border-blue-800">Total</td>
-                                        <td class="text-center text-xl font-bold border-2 border-blue-800 w-44">{{$total.' €'}}</td>
+                                        <td class="text-center text-xl font-semibold bg-blue-200 border-2 border-blue-800">Total</td>
+                                        <td class="text-center text-xl font-bold bg-blue-400 border-2 border-blue-800 w-44">{{$total.' €'}}</td>
                                 
                                     </tr>
 

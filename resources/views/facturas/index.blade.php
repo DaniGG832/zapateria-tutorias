@@ -18,11 +18,11 @@
                             <table class="table-auto border-separate border border-blue-100">
                                 <thead>
                                     <tr>
-                                        <th class="border border-blue-400">facturas</th>
-                                        <th class="border border-blue-400">numero factura</th>
-                                        <th class="border border-blue-400">fecha</th>
-                                        <th class="border border-blue-400">Articulos</th>
-                                        <th class="border border-blue-400">Detalles</th>
+                                        <th class="border bg-blue-200 border-blue-400">facturas</th>
+                                        <th class="border bg-blue-200 border-blue-400">numero factura</th>
+                                        <th class="border bg-blue-200 border-blue-400">fecha</th>
+                                        <th class="border bg-blue-200 border-blue-400">Articulos</th>
+                                        <th class="border bg-blue-200 border-blue-400">Detalles</th>
 
                                     </tr>
                                 </thead>

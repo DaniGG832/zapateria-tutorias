@@ -22,11 +22,11 @@
                         <table class="table-auto border-separate border border-blue-900">
                             <thead>
                                 <tr>
-                                    <th class="border border-blue-600">Lineas carrito</th>
-                                    <th class="border border-blue-600">Descripción</th>
-                                    <th class="border border-blue-600">Cantidad</th>
-                                    <th class="border border-blue-600">Precio</th>
-                                    <th class="border border-blue-600">Total </th>
+                                    <th class="border bg-blue-400 border-blue-600">Lineas carrito</th>
+                                    <th class="border bg-blue-400 border-blue-600">Cantidad</th>
+                                    <th class="border bg-blue-400 border-blue-600">Precio</th>
+                                    <th class="border bg-blue-400 border-blue-600">Descripción</th>
+                                    <th class="border bg-blue-400 border-blue-600">Total </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -72,8 +72,8 @@
                                     <td></td>
                                     <td></td>
 
-                                    <th class="border-2 border-blue-600">TOTAL CARRITO</th>
-                                    <th class="w-28 text-right border-4 border-blue-600">{{ $totalCarrito . ' €' }}
+                                    <th class="border-2 bg-blue-300 border-blue-600">TOTAL CARRITO</th>
+                                    <th class="w-28 text-right bg-blue-400 border-4 border-blue-600">{{ $totalCarrito . ' €' }}
                                     </th>
                                 </tr>
                                 <tr>
