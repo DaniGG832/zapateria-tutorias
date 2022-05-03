@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/zapateria', function () {
     return view('zapateria',[
         'zapatos'=>Zapato::paginate(9),
+        'page'=>null,
         
     ]);
 })->name('zapateria');
